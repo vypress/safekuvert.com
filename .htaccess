@@ -1,0 +1,19 @@
+ErrorDocument 404 /404.php
+DirectoryIndex index.php index.html
+IndexIgnore *
+
+RewriteEngine on
+
+#All existing files
+RewriteCond %{REQUEST_FILENAME} -s
+RewriteRule (.+) - [L]
+
+#Directories
+#RewriteCond %{REQUEST_FILENAME} -d
+#RewriteRule ^(.+[^/])$ $1/ [R,L]
+
+#Other products
+RewriteRule SafeKuvert101.*x64\.msi$ /files/SafeKuvert102x64.msi [R=301,NC,L]
+RewriteRule SafeKuvert101.*\.msi$ /files/SafeKuvert102.msi [R=301,NC,L]
+RewriteRule SafeKuvertRus101.*x64\.msi$ /files/SafeKuvertRus102x64.msi [R=301,NC,L]
+RewriteRule SafeKuvertRus101.*\.msi$ /files/SafeKuvertRus102.msi [R=301,NC,L]
